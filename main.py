@@ -1,48 +1,29 @@
-from datetime import datetime
-import pandas as pd
-import csv
-import time
+from customtkinter import *
 
-df = pd.read_csv('alarms.csv')
-time_arr = df["time"].to_list()
-message = df["message"].to_list()
-triggered = set()
+class App(CTk):
+    def __init__(self, fg_color = "black"):
+        super().__init__(fg_color)
 
-def add_reminder():
-    t = input("Enter time HH:MM format")
-    m = input("Enter message")
-
-    with open('alarms.csv','a',newline='\n') as file:
-        writer = csv.writer(file)
-        writer.writerow([t,m])
-    
-    #since changed
-    df = pd.read_csv('alarms.csv')
-    global time_arr,message
-    time_arr = df["time"].to_list()
-    message = df["message"].to_list()
-    
-
-def startApp():
-    global triggered
-    last_min=""
-    while True:
-        #get time_arr
-        now = datetime.now().strftime("%H:%M")
+        self.title("Promptly")
         
-        #clear trigger alarms
-        if now != last_min:
-            triggered.clear()
-            last_min = now
+        #geometry
+        self.geometry("800x600")
+        self.grid_columnconfigure(0,weight=1)
+        self.grid_columnconfigure(1,weight=2)
+        self.grid_columnconfigure(2,weight=1)
 
-        #get arrays from csv
-        for i in range(0,len(time_arr)):
-            key = (time_arr[i],message[i])
-            if(now==time_arr[i]) and key not in triggered:
-                print(message[i])
-                triggered.add(key)
+        #labels
+        CTkLabel(self,text="Time",text_color="white").grid(row=0,column=0,padx=20,pady=20,sticky="w")
+        CTkLabel(self,text="Message",text_color="white").grid(row=0,column=1,padx=20,pady=20,sticky="w")
 
-        time.sleep(1)
-        
-#add_reminder()
-startApp()
+        #entries
+        CTkEntry(self,placeholder_text="enter time HH:MM",corner_radius=0).grid(row=1,column=0,padx=20,sticky="ew")
+        #TODO:variable for time
+        CTkEntry(self,placeholder_text="enter message",corner_radius=0).grid(row=1,column=1,padx=20,sticky="ew")
+        #TODO:variable for message
+
+        #button
+        CTkButton(self,text="Add Reminder",corner_radius=0,fg_color="black",border_color="#FFFFFF",border_width=2).grid(row=1,column=2)
+
+app = App()
+app.mainloop()
