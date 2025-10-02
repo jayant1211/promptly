@@ -1,4 +1,9 @@
-# Promptly - Simple Desktop Reminder App
+# Promptly 
+Simple Reminder App for Desktop using Python
+
+latest release notes [v0.1.0](https://github.com/jayant1211/promptly/releases/tag/v0.1.0)
+
+---
 
 ![promptly](src/image.png)
 
