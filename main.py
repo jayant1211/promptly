@@ -29,9 +29,11 @@ class App(CTk):
 
         #frame to display current list
         CTkLabel(self,text="Reminders List",font=("Segoe UI", 24)).grid(row=2,column=0,padx=20,pady=(20,0),sticky="w")
-        self.list_frame = CTkScrollableFrame(self,height=600, corner_radius=0)
+        self.list_frame = CTkScrollableFrame(self,height=600, corner_radius=0,fg_color="black")
         self.list_frame.grid(row=3, columnspan=3, padx=20, pady=20, sticky="nsew")
         self.list_frame.grid_columnconfigure(0, weight=1)
+        self.list_frame.grid_columnconfigure(1, weight=2)
+        self.list_frame.grid_columnconfigure(2, weight=1)
 
         #load reminders
         self.df = pd.read_csv('alarms.csv') #TODO:create if does not exist
@@ -54,9 +56,9 @@ class App(CTk):
         for widget in self.list_frame.winfo_children():
             widget.destroy()
         for idx, row in self.df.iterrows():
-            CTkLabel(self.list_frame, text=row['time'], fg_color="black", text_color="white").grid(row=idx, column=0, padx=10, pady=5, sticky="w")
-            CTkLabel(self.list_frame, text=row['message'], fg_color="black", text_color="white").grid(row=idx, column=1, padx=10, pady=5, sticky="w")
-            CTkButton(self.list_frame, text="Delete", command=lambda i=idx: self.delete_reminder(i),corner_radius=0, fg_color="black", hover_color="#333", text_color="red").grid(row=idx, column=2, padx=10, pady=5)
+            CTkLabel(self.list_frame, text=row['time'], fg_color="black", text_color="white").grid(row=idx, column=0, sticky="w")
+            CTkLabel(self.list_frame, text=row['message'], fg_color="black", text_color="white").grid(row=idx, column=1, sticky="w")
+            CTkButton(self.list_frame, text="Delete", command=lambda i=idx: self.delete_reminder(i),corner_radius=0, border_color="white",border_width=1,fg_color="black", hover_color="red", text_color="white").grid(row=idx, column=2,sticky="e")
 
 app = App()
 app.mainloop()
