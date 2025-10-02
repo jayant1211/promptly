@@ -1,2 +1,35 @@
-# promptly
-tkinter based desktop app for time-based flash reminders
+# Promptly - Simple Desktop Reminder App
+
+![promptly](src/image.png)
+
+## What it does
+
+Promptly is a app to help you focus. Add time and a message, and when that time comes, the app flashes a full-screen black overlay with your message. Dismiss it by clicking, moving the mouse, or pressing any key. Keeps track of reminders, add/delete as you need.
+
+## Usage
+
+1. Download `.exe`</a> and run directly
+or
+
+2. run from source
+```bash
+git clone https://github.com/jayant1211/promptly
+cd promptly
+pip install customtkinter pandas
+python app.py
+```
+
+## To-dos
+
+- [x] Add reminders
+- [x] Display reminders in list
+- [x] Full-screen flash alerts
+- [x] Delete reminders
+- [ ] Input validation
+- [ ] Date-based reminders
+- [ ] Recurring reminders
+- [ ] Hotkeys
+- [ ] Background/system tray integration
+- [ ] Sound notifications
+- [ ] Switch storage to SQLite
+- [ ] Calendar Integration
