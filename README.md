@@ -1,7 +1,7 @@
 # Promptly 
 Simple Reminder App for Desktop using Python
 
-latest release notes [v0.1.0](https://github.com/jayant1211/promptly/releases/tag/v0.1.0)
+latest release notes [v0.1.1](https://github.com/jayant1211/promptly/releases/tag/v0.1.1)
 
 ---
 
