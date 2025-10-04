@@ -5,7 +5,7 @@ latest release notes [v0.1.1](https://github.com/jayant1211/promptly/releases/ta
 
 ---
 
-![promptly](src/image.png)
+![promptly](src/img.png)
 
 ## What it does
 
