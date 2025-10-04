@@ -5,7 +5,8 @@
 - [x] Full-screen flash alerts
 - [x] Delete reminders
 - [x] Input validation improvements
-- [ ] Date-based reminders
+- [x] Date-based reminders
+- [ ] Sort Reminders based on date/entry
 - [ ] Recurring reminders
 - [ ] Hotkey Support
 - [ ] Background/system tray integration
