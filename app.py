@@ -60,9 +60,22 @@ class App(CTk):
         self.load_reminders() #first instance for loading reminders
         self.check_alarms() #start this, is periodic; every sec
     
+    
+    def validTime(self, s: str) -> bool:
+        try:
+            hh, mm = map(int, s.split(":"))
+            return 0 <= hh <= 23 and 0 <= mm <= 59
+        except (ValueError, AttributeError):
+            return False
+
+
     def addReminder(self):
-        #TODO:validate time and message(null)
         t = self.time_entry.get()
+        if not self.validTime(t):
+            self.time_entry.delete(0, "end")
+            self.message_entry.delete(0,"end")
+            self.time_entry.insert(0, "Wrong Format. Use HH:MM (eg. 23:59)")
+            return
         m = self.message_entry.get()
         with open(csv_path,'a',newline='\n') as file:
             writer = csv.writer(file)

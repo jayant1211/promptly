@@ -30,7 +30,7 @@ python app.py
 - [x] Display reminders in list
 - [x] Full-screen flash alerts
 - [x] Delete reminders
-- [ ] Input validation
+- [x] Input validation
 - [ ] Date-based reminders
 - [ ] Recurring reminders
 - [ ] Hotkeys

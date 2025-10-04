@@ -4,7 +4,7 @@
 - [x] Display reminders in list
 - [x] Full-screen flash alerts
 - [x] Delete reminders
-- [ ] Input validation improvements
+- [x] Input validation improvements
 - [ ] Date-based reminders
 - [ ] Recurring reminders
 - [ ] Hotkey Support
