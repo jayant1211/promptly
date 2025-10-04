@@ -13,7 +13,7 @@ Promptly is a app to help you focus. Add time and a message, and when that time 
 
 ## Usage
 
-1. Download `.exe` from [here](https://github.com/jayant1211/promptly/releases/tag/v0.1.) and run directly
+1. Download `.exe` from [here](https://github.com/jayant1211/promptly/releases/download/v0.1.1/promptly-app-0.1.1.exe) and run directly
 or
 
 2. run from source
